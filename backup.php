@@ -64,9 +64,13 @@ class Backup
 	 */
 	public function uploadFile($file, $mode = 'add')
 	{
-		$path = "/".$this->projectFolder."/$file";
-		$contents = file_get_contents($file);
-	    $this->dbxClient->upload($path, $contents, $mode);
+	    $path = "/".$this->projectFolder."/$file";
+	    $contents = file_get_contents($file);
+
+	    //if the contents is not empty upload otherwise do nothing
+	    if (! empty($content)) {
+	        $this->dbxClient->upload($path, $contents, $mode);
+	    }
 	}
 
 	/**
