@@ -1,15 +1,14 @@
 <?php
 if(file_exists('vendor/autoload.php')){
 	require 'vendor/autoload.php';
-	require 'backup.php';	
+	require 'backup.php';
 
 	//set access token
-	$token = 'enter your token from dropbox here';
-	$project = 'dropboxbackup/1.0';
+	$token = 'your-token-here';
 	$projectFolder = 'localserver';
 
-	$bk = new Backup($token,$project,$projectFolder);
-	//$bk->upload('index.php');//file or folder to upload to dropbox
+	$bk = new Backup($token,$projectFolder);
+	$bk->upload('test.txt');//file or folder to upload to dropbox
 
 	echo 'Upload Complete';
 

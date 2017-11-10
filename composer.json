@@ -1,6 +1,6 @@
 {
     "require": {
-        "php": ">=5.3.0",
-        "dropbox/dropbox-sdk": "1.1.*"
+        "php": ">=7.0.0",
+        "spatie/dropbox-api": "^1.6"
     }
 }
