@@ -62,11 +62,10 @@ class Backup
 	 * uploadFile upload file to dropbox using the Dropbox API
 	 * @param  string $file path to file
 	 */
-	public function uploadFile($file)
+	public function uploadFile($file, $mode = 'add')
 	{
 		$path = "/".$this->projectFolder."/$file";
 		$contents = file_get_contents($file);
-		$mode = 'add';
 	    $this->dbxClient->upload($path, $contents, $mode);
 	}
 
