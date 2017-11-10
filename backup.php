@@ -64,7 +64,10 @@ class Backup
 	 */
 	public function uploadFile($file)
 	{
-	    $this->dbxClient->upload("/".$this->projectFolder."/$file", file_get_contents($file));
+		$path = "/".$this->projectFolder."/$file";
+		$contents = file_get_contents($file);
+		$mode = 'add';
+	    $this->dbxClient->upload($path, $contents, $mode);
 	}
 
 	/**
