@@ -68,7 +68,7 @@ class Backup
 	    $contents = file_get_contents($file);
 
 	    //if the contents is not empty upload otherwise do nothing
-	    if (! empty($content)) {
+	    if (! empty($contents)) {
 	        $this->dbxClient->upload($path, $contents, $mode);
 	    }
 	}
